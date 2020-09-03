@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
-
+import (
+	"fmt"
+	"strings"
+)
 //Creating a new data type called deck 
 
 type deck []string
@@ -28,4 +30,8 @@ func (d deck) print() { //receiver conventionally named with a single letter alo
 
 func deal(d deck,handSize int) (deck,deck) {
 return d[:handSize], d[handSize:]
+}
+
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",") //With simple type casting we get 
 }
